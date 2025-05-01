@@ -35,5 +35,5 @@ An intelligent, AI-powered health assistant that creates **personalized diet and
 
 1. Clone the repository  
    ```bash
-   git clone https://github.com/your-username/diet-workout-planner.git
+   git clone https://github.com/Pratyush-Basu/diet-workout-planner.git
    cd diet-workout-planner
