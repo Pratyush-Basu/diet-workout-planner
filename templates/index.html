@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personalized Diet & Workout Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+    *{
+        color:rgb(8, 59, 61);
+        font-width:20px;
+    }
+    .form-heading {
+      color:rgb(255, 0, 55);
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5 mb-5">
+    <h2 class="form-heading">Personalized Diet and Workout Planner</h2>
+    <form action="/recommendation" method="post" class="p-4 border rounded shadow-sm bg-light">
+
+      <!-- Basic Info -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="full_name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="full_name" name="full_name" required>
+        </div>
+        <div class="col-md-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <div class="col-md-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select class="form-select" id="gender" name="gender" required>
+            <option selected disabled>Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" id="country" name="country" required>
+          </div>
+      </div>
+
+      <!-- Physical Stats -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="height" class="form-label">Height (cm)</label>
+          <input type="number" class="form-control" id="height" name="height" required>
+        </div>
+        <div class="col-md-6">
+          <label for="weight" class="form-label">Weight (kg)</label>
+          <input type="number" class="form-control" id="weight" name="weight" required>
+        </div>
+      </div>
+
+      <!-- Goals -->
+      <div class="mb-3">
+        <label for="fitness_goal" class="form-label">Fitness Goal</label>
+        <select class="form-select" id="fitness_goal" name="fitness_goal" required>
+          <option selected disabled>Select</option>
+          <option>Lose Weight</option>
+          <option>Gain Muscle</option>
+          <option>Maintain Fitness</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="target_weight" class="form-label">Target Weight (kg)</label>
+        <input type="number" class="form-control" id="target_weight" name="target_weight">
+      </div>
+
+      <!-- Dietary Preferences -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="diet_type" class="form-label">Diet Type</label>
+          <select class="form-select" id="diet_type" name="diet_type" required>
+            <option selected disabled>Select</option>
+            <option>Vegetarian</option>
+            <option>Vegan</option>
+            <option>Non-Vegetarian</option>
+            <option>Keto</option>
+            <option>Paleo</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="allergies" class="form-label">Allergies / Restrictions</label>
+          <input type="text" class="form-control" id="allergies" name="allergies" placeholder="e.g. nuts, dairy">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="meals_per_day" class="form-label">Daily Meal Count</label>
+        <select class="form-select" id="meals_per_day" name="meals_per_day">
+          <option selected disabled>Select</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <!-- Workout Preferences -->
+      <div class="mb-3">
+        <label for="workout_level" class="form-label">Workout Level</label>
+        <select class="form-select" id="workout_level" name="workout_level">
+          <option selected disabled>Select</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Preferred Workout Types</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="cardio" name="workout_types" value="Cardio">
+          <label class="form-check-label" for="cardio">Cardio</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="strength" name="workout_types" value="Strength">
+          <label class="form-check-label" for="strength">Strength</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="yoga" name="workout_types" value="Yoga">
+          <label class="form-check-label" for="yoga">Yoga</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="hiit" name="workout_types" value="HIIT">
+          <label class="form-check-label" for="hiit">HIIT</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="workout_days" class="form-label">Workout Days per Week</label>
+        <select class="form-select" id="workout_days" name="workout_days">
+          <option selected disabled>Select</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </div>
+
+      <!-- Lifestyle -->
+      <div class="mb-3">
+        <label for="activity_level" class="form-label">Activity Level</label>
+        <select class="form-select" id="activity_level" name="activity_level">
+          <option selected disabled>Select</option>
+          <option>Sedentary</option>
+          <option>Lightly Active</option>
+          <option>Active</option>
+          <option>Very Active</option>
+        </select>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="wake_up" class="form-label">Wake-up Time</label>
+          <input type="time" class="form-control" id="wake_up" name="wake_up">
+        </div>
+        <div class="col-md-6">
+          <label for="bed_time" class="form-label">Bedtime</label>
+          <input type="time" class="form-control" id="bed_time" name="bed_time">
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="mb-3">
+        <label for="notes" class="form-label">Additional Notes or Health Conditions</label>
+        <textarea class="form-control" id="notes" name="notes" rows="3" placeholder="e.g. diabetic, back pain, etc."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary w-100">Get My Plan</button>
+      
+    </form>
+  </div>
+</body>
+</html>

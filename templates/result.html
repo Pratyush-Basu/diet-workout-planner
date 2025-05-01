@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personalized Plan</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 960px;
+      margin-top: 40px;
+    }
+    .plan-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h1, h2 {
+      color: #007bff;
+    }
+    .section-title {
+      border-bottom: 2px solid #dee2e6;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      text-align: center;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="plan-box">
+      <h1 class="text-center mb-4">🧠 Personalized Diet & Workout Plan</h1>
+      <div>{{ plan|safe }}</div>
+    </div>
+    <div class="footer">
+      <p>Generated with 💪 using AI</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle (optional, only needed if you use dropdowns etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
